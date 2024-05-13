@@ -63,7 +63,7 @@ header {
   transition: all 0.4s ease;
 }
 header.active {
-  background: linear-gradient(180deg, rgba(44, 41, 39, 0.3) 0%, rgba(44, 41, 39, 0) 100%);
+  background: linear-gradient(180deg, rgba(44, 41, 39, 0.5) 0%, rgba(44, 41, 39, 0) 100%);
 }
 
 .header-top {
@@ -1167,6 +1167,9 @@ footer .footer-btm {
     height: fit-content;
   }
   .header-top {
-    padding-bottom: 10rem;
+    padding-bottom: 11rem;
+  }
+  header {
+    padding-top: 10rem;
   }
 }/*# sourceMappingURL=style.css.map */
