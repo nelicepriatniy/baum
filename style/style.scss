@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Magistral';
-    src: url('../media/fonts/Magistral-Book.ttf');
+    src: url('../media/fonts/Magistral-Light.ttf');
     font-weight: 400;
 }
 
@@ -59,10 +59,10 @@ header {
     top: 0;
     z-index: 10;
     transition: all .4s ease;
-    &.active {
-        background: rgba(19, 18, 17, 0.7);
-        backdrop-filter: blur(20rem);
-    }
+    // &.active {
+    //     background: rgba(19, 18, 17, 0.7);
+    //     backdrop-filter: blur(20rem);
+    // }
 }
 
 .header-top {
@@ -128,6 +128,26 @@ header {
         line-height: 140%;
         text-transform: uppercase;
         color: #fff;
+        position: relative;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            max-width: 0;
+            overflow: hidden;
+            height: 1rem;
+            background: linear-gradient(90deg, rgba(232, 232, 232, 0) 0%, rgba(232, 232, 232, 0.7) 51%, rgba(232, 232, 232, 0) 100%);
+            bottom: -6rem;
+            left: 0;
+            transition: all .4s ease;
+        }
+        &:hover {
+            &::before {
+                max-width: 100%;
+            }
+
+        }
     }
 }
 
@@ -186,6 +206,22 @@ header {
         align-items: flex-end;
         height: 476rem;
         padding: 16rem;
+        border-radius: 8rem;
+        overflow: hidden;
+        &:hover {
+
+            & .gallery-wrapper__item__img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                scale: 1.05;
+    
+            }
+
+        }
 
         &__img {
             position: absolute;
@@ -194,7 +230,7 @@ header {
             width: 100%;
             height: 100%;
             object-fit: cover;
-
+            transition: all .4s ease;
         }
 
         &__name {
@@ -321,6 +357,11 @@ header {
             justify-content: center;
             border-radius: 100rem;
             border: 1rem solid #FFF;
+            transition: all .4s ease;
+            &:hover {
+                box-shadow: 0 0 8px 0 #fff, 0 0 16px 0 #fff;
+
+            }
 
             & svg {
                 width: 28rem;
@@ -443,6 +484,8 @@ header {
     padding: 18rem 30rem;
     background: #35312f;
     width: fit-content;
+    border-radius: 8rem;
+    overflow: hidden;
 
     &__svg {
         width: 28rem;
@@ -476,6 +519,11 @@ header {
     padding: 15rem 32rem;
     display: block;
     width: fit-content;
+    transition: all .4s ease;
+    &:hover {
+        border: 1rem solid #fff;
+
+    }
 }
 
 .deliviry-right {
@@ -565,6 +613,11 @@ header {
         padding: 0rem 32rem;
         width: 248rem;
         height: 52rem;
+        transition: all .4s ease;
+        &:hover {
+            border: 1rem solid #fff;
+    
+        }
     }
 }
 
@@ -855,6 +908,7 @@ footer {
             align-items: flex-end;
             height: 185rem;
             padding: 6rem;
+            border-radius: 4rem;
 
             &__img {
                 position: absolute;
@@ -907,6 +961,10 @@ footer {
 
             &:nth-child(18n) {
                 grid-column: span 1;
+            }
+            &:nth-last-child(2) {
+                grid-column: span 1;
+
             }
         }
     }
@@ -1015,6 +1073,8 @@ footer {
 
         &__item { 
             height: 280rem;
+            border-radius: 8rem;
+            overflow: hidden;
         }
     }
     .deliviry {
@@ -1069,10 +1129,12 @@ footer {
         display: flex;
         align-items: center;
         justify-content: center;
+        height: 55rem;
     }
     .deliviry-right {
         width: 100%;
         height: 410rem;
+        padding: 16rem 0;
     }
     .deliviry-right__bg {
         width: 100vw;
@@ -1082,7 +1144,7 @@ footer {
     .deliviry-right__text {
         font-family: $second-family;
         font-weight: 400;
-        font-size: 16rem;
+        font-size: 14rem;
         line-height: 140%;
         color: #fff;
         border-radius: 10rem;
@@ -1234,5 +1296,8 @@ footer {
     }
     .video video {
         height: 664rem;
+    }
+    .video {
+        height: fit-content;
     }
 }
