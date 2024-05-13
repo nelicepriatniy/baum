@@ -15,6 +15,11 @@
     src: url('../media/fonts/SFProText-Regular.ttf');
     font-weight: 400;
 }
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('../media/fonts/Magistral-Light.ttf');
+    font-weight: 300;
+}
 
 * {
     margin: 0;
@@ -56,17 +61,17 @@ $second-family: "SF Pro Text", sans-serif;
 
 header {
     // background: black;
-    padding-top: 25rem;
+    padding-top: 17rem;
     padding-bottom: 20rem;
     position: fixed;
     left: 0;
     top: 0;
     z-index: 10;
     transition: all .4s ease;
-    // &.active {
-    //     background: rgba(19, 18, 17, 0.7);
-    //     backdrop-filter: blur(20rem);
-    // }
+    &.active {
+        background: linear-gradient(180deg, rgba(44, 41, 39, 0.3) 0%, rgba(44, 41, 39, 0) 100%);
+        // backdrop-filter: blur(20rem);
+    }
 }
 
 .header-top {
@@ -77,8 +82,8 @@ header {
     margin-bottom: 14rem;
 
     &__logo {
-        width: 120rem;
-        height: 44rem;
+        width: 108rem;
+        height: 40rem;
         position: relative;
 
         & img {
@@ -499,7 +504,7 @@ header {
 
     &__text {
         font-family: $second-family;
-        font-weight: 400;
+        font-weight: 300;
         font-size: 14rem;
         line-height: 140%;
         color: #fff;
@@ -556,7 +561,7 @@ header {
         backdrop-filter: blur(38.73188400268555rem);
         background: rgba(71, 71, 71, 0.3);
         font-family: $second-family;
-        font-weight: 400;
+        font-weight: 300;
         font-size: 16rem;
         line-height: 100%;
         color: #fff;
@@ -582,7 +587,7 @@ header {
 
     &__text {
         font-family: $second-family;
-        font-weight: 400;
+        font-weight: 300;
         font-size: 16rem;
         line-height: 140%;
         color: #fff;
@@ -595,7 +600,7 @@ header {
 
     &__text {
         font-family: $second-family;
-        font-weight: 400;
+        font-weight: 300;
         font-size: 14rem;
         line-height: 140%;
         color: #fff;
@@ -1304,4 +1309,8 @@ footer {
     .video {
         height: fit-content;
     }
+    .header-top {
+        padding-bottom: 10rem;
+    }
+        
 }
