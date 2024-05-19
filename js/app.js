@@ -42,14 +42,37 @@ let scrollBtn = document.querySelectorAll('.scrollbtn');  //класс кноп�
 scrollBtn.forEach(el => {
     let elem = el;
     el.addEventListener('click', function () {
-        let data = elem.getAttribute('data-b'); 
+        let data = elem.getAttribute('data-b');
         let block = document.querySelector(data);
         let offset = offsetPosition(block);
         window.scrollTo({
-            top: offset -100,
+            top: offset - 100,
             behavior: 'smooth',
-            
+
         });
         console.log(offset)
     })
 });
+
+
+const swiper = new Swiper('.product-slider', {
+    speed: 400,
+    spaceBetween: 24,
+    slidesPerView: 2,
+    // loop: true,
+    navigation: {
+        nextEl: '.product-slider-arr-next'
+    },
+});
+
+
+let questions = document.querySelectorAll('.product-faq-item'); //вставляем class блока с вопросом
+if (questions.length > 0) {
+    questions[0].classList.add('active')
+    for (let i = 0; questions.length > i; i++) {
+        questions[0].classList.add('active')
+        questions[i].onclick = () => {
+            questions[i].classList.toggle('active')
+        }
+    }
+}
