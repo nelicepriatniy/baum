@@ -827,7 +827,7 @@ header.product .header-top__cart {
 }
 
 .product-harr-item, .product-slider-slide {
-  border-radius: 8px;
+  border-radius: 8rem;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -1180,7 +1180,7 @@ header.product .header-top__cart {
 }
 
 .recomend {
-  padding: 64px 0;
+  padding: 64rem 0;
 }
 
 .recomend-wrapper {
@@ -1192,7 +1192,7 @@ header.product .header-top__cart {
 
 .recomend-item {
   position: relative;
-  border-radius: 8px;
+  border-radius: 8rem;
   overflow: hidden;
 }
 
