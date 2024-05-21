@@ -57,12 +57,31 @@ scrollBtn.forEach(el => {
 
 const swiper = new Swiper('.product-slider', {
     speed: 400,
-    spaceBetween: 24,
-    slidesPerView: 2,
     // loop: true,
     navigation: {
-        nextEl: '.product-slider-arr-next'
+        nextEl: '.product-slider-arr-next',
+        prevEl: '.product-slider-arr-prev',
     },
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 12,
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+          clickable: true,
+        },
+
+      },
+      1000: {
+        spaceBetween: 24,
+        slidesPerView: 2,
+        pagination: {
+          enabled: false,
+        },
+      },
+    }
 });
 
 
