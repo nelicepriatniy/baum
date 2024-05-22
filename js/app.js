@@ -87,7 +87,6 @@ const swiper = new Swiper('.product-slider', {
 
 let questions = document.querySelectorAll('.product-faq-item'); //вставляем class блока с вопросом
 if (questions.length > 0) {
-    questions[0].classList.add('active')
     for (let i = 0; questions.length > i; i++) {
         questions[i].onclick = () => {
             questions[i].classList.toggle('active')

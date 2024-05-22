@@ -1988,7 +1988,7 @@ header {
     }
     .header-product-top-right-button {
         width: 148px;
-        height: 34px;
+        height: 38px;
         padding: 0;
     }
     .header-product-top-right-button-text {
@@ -2051,7 +2051,7 @@ header {
         padding: 16px;
     }
     .product-harr-item-heading {
-        font-weight: 400;
+        font-weight: 500;
         font-size: 16px;
         line-height: 140%;
         color: #fff;
@@ -2083,7 +2083,7 @@ header {
         margin-top: 16px;
         & .swiper-pagination-bullet {
             background: #fff;
-            height: 3px;
+            height: 1px;
             width: 100%;
             border-radius: 50px;
             transition: all .4s ease;
@@ -2134,6 +2134,7 @@ header {
     .product-harr-block-heading {
         max-width: 204rem;
         flex-shrink: 0;
+        margin-bottom: 32px;
 
     }
     .product-harr-block-num- {
