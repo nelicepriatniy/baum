@@ -89,7 +89,6 @@ let questions = document.querySelectorAll('.product-faq-item'); //вставля
 if (questions.length > 0) {
     questions[0].classList.add('active')
     for (let i = 0; questions.length > i; i++) {
-        questions[0].classList.add('active')
         questions[i].onclick = () => {
             questions[i].classList.toggle('active')
         }
