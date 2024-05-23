@@ -150,6 +150,19 @@ let cardWrapper = cardBlock.querySelector('.card-wrapper-products');
 let cartGlobalId = 5;
 
 
+let itogPrice = 0;
+cardWrapper = cardBlock.querySelector('.card-wrapper-products');
+cardWrapper.innerHTML = '';
+if (cartList.length > 0) {
+    for (let i = 0; cartList.length > i; i++) {
+        if (cartList[i] != undefined) {
+            cardWrapper.insertAdjacentHTML("afterbegin", renderCartItem(cartList[i].img, cartList[i].name, cartList[i].garant, cartList[i].count, cartList[i].price, cartList[i].id))
+        }
+        if (cartList[i] != undefined) {
+            itogPrice = itogPrice + cartList[i].price;
+        }
+    }
+}
 
 setInterval(() => {
 
@@ -157,19 +170,6 @@ setInterval(() => {
         let cardCount = cardBlock.querySelector('.card-heading-text-num');
         let cardItog = cardBlock.querySelector('.card-price-num');
         let cartDeleteAll = cardBlock.querySelector('.card-delete-all');
-        let itogPrice = 0;
-        cardWrapper = cardBlock.querySelector('.card-wrapper-products');
-        cardWrapper.innerHTML = '';
-        if (cartList.length > 0) {
-            for (let i = 0; cartList.length > i; i++) {
-                if (cartList[i] != undefined) {
-                    cardWrapper.insertAdjacentHTML("afterbegin", renderCartItem(cartList[i].img, cartList[i].name, cartList[i].garant, cartList[i].count, cartList[i].price, cartList[i].id))
-                }
-                if (cartList[i] != undefined) {
-                    itogPrice = itogPrice + cartList[i].price;
-                }
-            }
-        }
 
         cardItog.innerHTML = itogPrice + '₽'
         cardCount.innerHTML = '(' + cartList.length + ')';
@@ -232,6 +232,18 @@ setInterval(() => {
                     price:  Number(addToCard[i].getAttribute('data-price')),
                     id: Number(addToCard[i].getAttribute('data-id')),
                 })
+                cardWrapper = cardBlock.querySelector('.card-wrapper-products');
+                cardWrapper.innerHTML = '';
+                if (cartList.length > 0) {
+                    for (let i = 0; cartList.length > i; i++) {
+                        if (cartList[i] != undefined) {
+                            cardWrapper.insertAdjacentHTML("afterbegin", renderCartItem(cartList[i].img, cartList[i].name, cartList[i].garant, cartList[i].count, cartList[i].price, cartList[i].id))
+                        }
+                        if (cartList[i] != undefined) {
+                            itogPrice = itogPrice + cartList[i].price;
+                        }
+                    }
+                }
             }
         }
     }
@@ -263,3 +275,107 @@ for(let i = 0; cardDeActivator.length > i; i++) {
     }
 
 }
+
+
+let cardBlock1 = document.querySelector('.cardforpayment');
+let cardWrapper1 = cardBlock1.querySelector('.card-wrapper-products');
+
+
+let itogPrice1 = 0;
+cardWrapper1 = cardBlock1.querySelector('.card-wrapper-products');
+cardWrapper1.innerHTML = '';
+if (cartList.length > 0) {
+    for (let i = 0; cartList.length > i; i++) {
+        if (cartList[i] != undefined) {
+            cardWrapper1.insertAdjacentHTML("afterbegin", renderCartItem(cartList[i].img, cartList[i].name, cartList[i].garant, cartList[i].count, cartList[i].price, cartList[i].id))
+        }
+        if (cartList[i] != undefined) {
+            itogPrice1 = itogPrice1 + cartList[i].price;
+        }
+    }
+}
+
+setInterval(() => {
+
+    if (cardBlock1) {
+        let cardCount2 = cardBlock1.querySelector('.card-heading-text-num');
+        let cardItog2 = cardBlock1.querySelector('.card-price-num');
+        let cartDeleteAll1 = cardBlock1.querySelector('.card-delete-all');
+
+        cardItog2.innerHTML = itogPrice + '₽'
+        cardCount2.innerHTML = '(' + cartList.length + ')';
+
+        cartDeleteAll1.onclick = () => {
+            cartList = [];
+            cardWrapper1.innerHTML = '';
+            itogPrice1 = 0;
+            cardItog2.innerHTML = itogPrice1 + '₽'
+            // cardBlock.classList.remove('active')
+        }
+        let allProducts1 = cardBlock1.querySelectorAll('.card-product');
+        if (allProducts1.length > 0) {
+            for (let i = 0; allProducts1.length > i; i++) {
+                let itemId1 = allProducts1[i].getAttribute('data-id');
+                let productDelete1 = allProducts1[i].querySelector('.card-product-delete');
+                productDelete1.onclick = () => {
+                    cardWrapper1 = cardBlock1.querySelector('.card-wrapper-products');
+                    cardWrapper1.innerHTML = '';
+                    itogPrice1 = 0;
+                    for (let j = 0; cartList.length > j; j++) {
+                        if (itemId1 == cartList[j].id) {
+                            cartList.splice(j, 1)
+                            // delete cartList[j]
+                        }
+                    }
+                    if (cartList.length > 0) {
+                        for (let m = 0; cartList.length > m; m++) {
+                            if (cartList[m] != undefined) {
+                                cardWrapper1.insertAdjacentHTML("afterbegin", renderCartItem(cartList[m].img, cartList[m].name, cartList[m].garant, cartList[m].count, cartList[m].price, cartList[m].id))
+                            }
+                            if (cartList[m] != undefined) {
+                                itogPrice1 = itogPrice1 + cartList[m].price;
+                            }
+                        }
+                    }
+                    allProducts1 = cardBlock1.querySelectorAll('.card-product');
+                    cardItog2.innerHTML = itogPrice1 + '₽'
+                    cardCount2.innerHTML = '(' + cartList.length + ')';
+
+                }
+            }
+        }
+    }
+    let addToCard = document.querySelectorAll('.product-button-add-new');
+    if(addToCard.length > 0) {
+        for(let i = 0; addToCard.length > i; i++) {
+            addToCard[i].onclick = ()=>{
+                cardBlock1.classList.add('active')
+                for(let j = 0; cartList.length > j; j++) {
+                    if(cartList[j].id === Number(addToCard[i].getAttribute('data-id'))) {
+                        cartList.splice(j, 1)
+                    }
+                }
+                cartList.push({
+                    img: addToCard[i].getAttribute('data-img'),
+                    name: addToCard[i].getAttribute('data-name'),
+                    garant: addToCard[i].getAttribute('data-garant'),
+                    count: addToCard[i].getAttribute('data-count'),
+                    price:  Number(addToCard[i].getAttribute('data-price')),
+                    id: Number(addToCard[i].getAttribute('data-id')),
+                })
+                cardWrapper1 = cardBlock1.querySelector('.card-wrapper-products');
+                cardWrapper1.innerHTML = '';
+                if (cartList.length > 0) {
+                    for (let i = 0; cartList.length > i; i++) {
+                        if (cartList[i] != undefined) {
+                            cardWrapper1.insertAdjacentHTML("afterbegin", renderCartItem(cartList[i].img, cartList[i].name, cartList[i].garant, cartList[i].count, cartList[i].price, cartList[i].id))
+                        }
+                        if (cartList[i] != undefined) {
+                            itogPrice1 = itogPrice1 + cartList[i].price;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}, 100)
