@@ -77,6 +77,20 @@ header {
         background: linear-gradient(180deg, rgba(44, 41, 39, 0.5) 0%, rgba(44, 41, 39, 0) 100%);
         // backdrop-filter: blur(20rem);
     }
+    &.product {
+        & .product-visual {
+            display: block;
+        }
+        & .header-product-top-right-button {
+            display: flex;
+        }
+    }
+    & .header-product-top-right-button {
+        display: none;
+    }
+}
+.product-visual {
+    display: none;
 }
 
 .header-product-top-right {
@@ -132,7 +146,7 @@ header {
         position: absolute;
         top: 50%;
         right: 0;
-        transform: translateY(-50%);
+        transform: translateY(-92%);
         width: 28rem;
         height: 28rem;
 
@@ -1041,7 +1055,7 @@ header {
     transition: all .4s ease;
     opacity: 0;
     &:hover {
-        box-shadow: 0 0 10px #fff;
+        box-shadow: 0 0 10rem #fff;
     }
     &.swiper-button-disabled {
         opacity: 0;
@@ -1142,6 +1156,7 @@ header {
     padding: 14rem 0rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .product-harr-block-item-heading {
     font-family: $second-family;
@@ -1150,6 +1165,9 @@ header {
     line-height: 140%;
     color: #fff;
     max-width: 507rem;
+    max-width: 100%;
+    flex-shrink: 0;
+    height: fit-content;
 }
 .product-harr-block-num- {
     font-family: $font-family;
@@ -1159,6 +1177,8 @@ header {
     text-align: right;
     color: #fff;
     max-width: 113rem;
+    max-width: 100%;
+    flex-shrink: 0;
 }
 .product-harr-block-img {
     border-radius: 8rem;
@@ -1190,7 +1210,7 @@ header {
     border-radius: 8rem;
     padding: 19rem 28rem;
     width: 100%;
-    height: 218rem;
+    height: 100%;
     padding: 19rem 29rem;
     position: relative;
     background: #35312f;
@@ -1410,6 +1430,232 @@ header {
         bottom: 0;
         left: 0;
     }
+}
+
+.price-product {
+    display: flex;
+    padding: 15rem 24rem;
+    backdrop-filter: blur(18rem);
+    background: rgba(178, 178, 178, 0.53);
+    border-radius: 8rem;
+    width: fit-content;
+    align-items: center;
+    gap: 16rem;
+    margin-bottom: 60rem;
+}
+.actual-price {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 24rem;
+    line-height: 140%;
+    color: #fff;
+}
+.sell-price {
+    font-family: $font-family;
+    font-weight: 300;
+    font-size: 18rem;
+    line-height: 140%;
+    text-decoration: line-through;
+    color: #e4e4e4;
+}
+
+.card-modal {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 621rem;
+    right: 0;
+    padding: 24rem 14rem 24em 30rem;
+    background: #fff;
+    z-index: 10;
+    transform: translateX(200%);
+    transition: all .4s ease;
+    opacity: 0;
+    &.active {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+.card-wrapper {
+}
+.card-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 28rem;
+    padding-right: 15rem;
+}
+.card-close-svg {
+    width: 36rem;
+    height: 36rem;
+}
+.card-heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 28rem;
+    align-items: center;
+    margin-right: 15rem;
+}
+.card-heading-text {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 28rem;
+    line-height: 140%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #000;
+}
+.card-heading-text-num {
+}
+.card-delete-all {
+    font-family: $second-family;
+    font-weight: 400;
+    font-size: 14rem;
+    line-height: 140%;
+    color: #7e7e7e;
+}
+.card-wrapper-products {
+    max-height: 352rem;
+    margin-bottom: 28rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    gap: 32rem;
+    overflow-y: scroll;
+    padding-right: 15rem;
+    &::-webkit-scrollbar {
+        border-radius: 50rem;
+        width: 6rem;
+
+    }
+    &::-webkit-scrollbar-track {
+        background: rgb(217, 217, 217);
+
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 50rem;
+        background: #2c2927;
+
+    }
+
+}
+.card-product {
+    display: flex;
+    position: relative;
+}
+.card-product-img {
+    width: 160rem;
+    height: 160rem;
+    object-fit: cover;
+    margin-right: 26rem;
+}
+.card-product-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-product-info-top {
+}
+.card-product-delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10rem;
+    height: 10rem;
+}
+.card-product-info-heading {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16rem;
+    line-height: 140%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #000;
+    margin-bottom: 4rem;
+}
+.card-product-info-garant {
+    font-family: $second-family;
+    font-weight: 400;
+    font-size: 14rem;
+    line-height: 140%;
+    color: #7e7e7e;
+}
+.card-product-info-btm {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card-product-info-btn-coll {
+    font-family: $second-family;
+    font-weight: 400;
+    font-size: 12rem;
+    line-height: 140%;
+    letter-spacing: 0.05em;
+    color: #000;
+}
+.card-product-info-btn-price {
+    font-family: $second-family;
+    font-weight: 400;
+    font-size: 16rem;
+    line-height: 140%;
+    letter-spacing: 0.05em;
+    color: #000;
+}
+.card-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 15rem;
+    margin-bottom: 28rem;
+}
+.card-price-text {
+    font-family: $second-family;
+    font-weight: 400;
+    font-size: 24rem;
+    line-height: 140%;
+    color: #000;
+    text-shadow: 0 0 5rem 0 rgba(255, 255, 255, 0.2), 0 5rem 13rem 0 rgba(0, 0, 0, 0.15);
+}
+.card-price-num {
+    font-family: $second-family;
+    font-weight: 500;
+    font-size: 24rem;
+    line-height: 140%;
+    color: #000;
+    text-shadow: 0 0 5rem 0 rgba(255, 255, 255, 0.2), 0 5rem 13rem 0 rgba(0, 0, 0, 0.15);
+}
+.card-oformit {
+    padding: 16rem 0;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16rem;
+    line-height: 140%;
+    letter-spacing: 0.05em;
+    color: #fff;
+    margin-bottom: 12rem;
+    background: #2c2927;
+    border-radius: 8rem;
+    padding: 16rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15rem;
+}
+.card-back {
+    padding: 16rem 0;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16rem;
+    line-height: 140%;
+    letter-spacing: 0.05em;
+    color: #000;
+    border: 1rem solid #2c2927;
+    border-radius: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15rem;
 }
 
 
@@ -1814,6 +2060,7 @@ header {
         width: 100vw;
         margin-left: -16rem;
         left: 0;
+        border-radius: 0;
     }
     .deliviry-right__text {
         font-family: $second-family;
@@ -1987,14 +2234,14 @@ header {
         transform: translate(0, 0);
     }
     .header-product-top-right-button {
-        width: 148px;
-        height: 38px;
+        width: 148rem;
+        height: 38rem;
         padding: 0;
     }
     .header-product-top-right-button-text {
         font-family: $font-family;
         font-weight: 500;
-        font-size: 12px;
+        font-size: 12rem;
         color: #fff;
     }
 
@@ -2004,17 +2251,17 @@ header {
     }
     .front-screen-info-heading {
         font-weight: 500;
-        font-size: 28px;
+        font-size: 28rem;
         text-transform: uppercase;
         color: #fff;
-        margin-bottom: 4px;
+        margin-bottom: 4rem;
     }
     .front-screen-info-text {
         font-weight: 400;
-        font-size: 16px;
+        font-size: 16rem;
         line-height: 140%;
         color: #fff;
-        margin-bottom: 20px;
+        margin-bottom: 20rem;
     }
     .front-screen-harr {
         flex-direction: column;
@@ -2023,12 +2270,12 @@ header {
     .front-screen-harr-item {
     }
     .front-screen-harr-item-img {
-        width: 25px;
-        height: 25px;
+        width: 25rem;
+        height: 25rem;
     }
     .front-screen-harr-item-text {
         font-weight: 300;
-        font-size: 16px;
+        font-size: 16rem;
         line-height: 140%;
         color: #fff;
     }
@@ -2048,11 +2295,11 @@ header {
     .product-harr-item-bg {
     }
     .product-harr-item-info {
-        padding: 16px;
+        padding: 16rem;
     }
     .product-harr-item-heading {
         font-weight: 500;
-        font-size: 16px;
+        font-size: 16rem;
         line-height: 140%;
         color: #fff;
     }
@@ -2063,15 +2310,16 @@ header {
     }
     .product-harr-item-list-item {
         font-weight: 400;
-        font-size: 14px;
+        font-size: 14rem;
         line-height: 140%;
         color: #fff;
     }
     .product-harr-item-list-item-svg {
+        flex-shrink: 0;
     }
     .product-harr-item-text {
         font-weight: 400;
-        font-size: 14px;
+        font-size: 14rem;
         line-height: 140%;
         color: #fff;
     }
@@ -2080,12 +2328,12 @@ header {
         width: 100%;
         position: relative !important;
         top: 0;
-        margin-top: 16px;
+        margin-top: 16rem;
         & .swiper-pagination-bullet {
             background: #fff;
-            height: 1px;
+            height: 1rem;
             width: 100%;
-            border-radius: 50px;
+            border-radius: 50rem;
             transition: all .4s ease;
             // opacity: 1;
             & .swiper-pagination-bullet-active {
@@ -2099,7 +2347,7 @@ header {
         display: none;
     }
     .product-slider-block .product-slider {
-        height: 528px;
+        height: 528rem;
     }
     .product-slider-slide {
         & .product-slide-bg {
@@ -2114,10 +2362,10 @@ header {
         position: relative;
         &::after {
             content: '';
-            display: block;
+            display: none;
             position: absolute;
             width: 100%;
-            height: 88px;
+            height: 88rem;
             background: linear-gradient(180deg, rgba(44, 41, 39, 0) 0%, rgba(44, 41, 39, 0.3) 100%);
             bottom: 520rem;
             left: 0;
@@ -2127,20 +2375,21 @@ header {
     .product-harr-block-left {
         width: 100%;
         padding: 0;
-        height: 404rem;
+        max-height: 404rem;
+        height: auto;
         margin-bottom: 32rem;
         position: relative;
     }
     .product-harr-block-heading {
         max-width: 204rem;
         flex-shrink: 0;
-        margin-bottom: 32px;
+        margin-bottom: 32rem;
 
     }
     .product-harr-block-num- {
-        font-size: 14px;
+        font-size: 14rem;
         line-height: 140%;
-        max-width: 113px;
+        max-width: 113rem;
         flex-shrink: 0;
     }
     .product-harr-block-item {
@@ -2151,7 +2400,7 @@ header {
     }
     .card.product {
         height: fit-content;
-        padding: 32px 0;
+        padding: 32rem 0;
         position: relative;
         &::after {
             content: '';
@@ -2166,16 +2415,16 @@ header {
         }
         & .card__desk {
             text-align: left;
-            font-size: 18px;
+            font-size: 16rem;
             line-height: 140%;
-            margin-top: 32px;
+            margin-top: 32rem;
             font-weight: 500;
         }
         & .card__info__model {
             margin-bottom: 0;
         }
         & .card__info__href.product-button {
-            margin-top: 160px;
+            margin-top: 160rem;
         }
         & .card__bg {
             top: 0;
@@ -2204,7 +2453,7 @@ header {
     }
 
     .product-rev {
-        padding: 32px 0;
+        padding: 32rem 0;
     }
     .container {
     }
@@ -2232,12 +2481,41 @@ header {
         padding: 32rem 0 64rem 0;
     }
     .product-harr-block {
-        padding: 32px 0;
+        padding: 32rem 0;
     }
     .product-slider-block {
-        padding: 32px 0;
+        padding: 32rem 0;
     }
     .product-harr {
-        padding: 64px 0 32px 0;
+        padding: 64rem 0 32rem 0;
     }
+    header.product .product-visual {
+        &.desk {
+            display: none;
+        }
+    }
+    .product-faq-item-top-button {
+        flex-shrink: 0;
+    }
+    .card.product .card__desk {
+      margin-top: 0;
+    }
+    .price-product {
+      margin-bottom: 70rem;
+    }
+    .card.product .card__info__model {
+        margin-bottom: 32rem;
+    }
+
+    .price-product {
+    }
+    .actual-price {
+        font-size: 24rem;
+        line-height: 140%;
+    }
+    .sell-price {
+        font-size: 18rem;
+        line-height: 140%;
+    }
+
 }

@@ -25,7 +25,7 @@
                             fill="white" />
                     </svg>
                 </div>
-                <div class="header-top-product-title desk">
+                <div class="header-top-product-title desk product-visual">
                     <p class="header-product-model">W700</p>
                     <p class="header-product-product">Электрогриль</p>
                 </div>
@@ -34,8 +34,8 @@
                 </div>
                 <div class="header-product-top-right">
                     <div class="header-product-top-right-button">
-                        <p class="header-product-top-right-button-text">Добавить в корзину</p>
-                        <svg class="header-product-top-right-button-svg" viewBox="0 0 217 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <p class="header-product-top-right-button-text " >Добавить в корзину</p>
+                        <svg class="header-product-top-right-button-svg product-button-add-new"  data-img="./../media/bg/Card.png" data-price="1000" data-name="Электрогриль W700" data-garant="гарантия 2 года" data-count="1" data-id="5"  viewBox="0 0 217 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="0.5" y="0.5" width="216" height="39" rx="7.5" stroke="url(#paint0_linear_973_11291)"/>
                             <defs>
                             <linearGradient id="paint0_linear_973_11291" x1="1.1305e-07" y1="0.499999" x2="214.232" y2="52.0107" gradientUnits="userSpaceOnUse">
@@ -47,7 +47,7 @@
                         </svg>
                             
                     </div>
-                    <div class="header-top__cart">
+                    <div class="header-top__cart header-top__cart-open">
                         <svg viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5.92334 4.35156H26.0843L22.9905 15.1797H9.01709" stroke="white" stroke-width="1.2"
                                 stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
@@ -80,6 +80,50 @@
             </div>
         </div>
     </header>
+    <div class="card-modal">
+        <div class="card-wrapper">
+            <div class="card-top">
+                <svg class="card-close-svg header-top__cart-close" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_1034_6004)">
+                      <path d="M15.9225 8.2585L6.3125 17.9185L15.9225 27.5785C16.0093 27.6925 16.1196 27.7865 16.2458 27.8541C16.3721 27.9218 16.5114 27.9615 16.6544 27.9706C16.7974 27.9797 16.9406 27.958 17.0745 27.907C17.2083 27.8559 17.3297 27.7767 17.4302 27.6747C17.5308 27.5727 17.6083 27.4502 17.6574 27.3157C17.7066 27.1811 17.7262 27.0376 17.715 26.8947C17.7039 26.7519 17.6622 26.6132 17.5927 26.4879C17.5233 26.3626 17.4277 26.2537 17.3125 26.1685L10.1225 18.9185H29.2525C29.5177 18.9185 29.7721 18.8131 29.9596 18.6256C30.1471 18.4381 30.2525 18.1837 30.2525 17.9185C30.2525 17.6533 30.1471 17.3989 29.9596 17.2114C29.7721 17.0239 29.5177 16.9185 29.2525 16.9185H10.1225L17.3125 9.6685C17.4995 9.48019 17.604 9.22532 17.6031 8.95996C17.6021 8.6946 17.4958 8.44047 17.3075 8.2535C17.1192 8.06652 16.8643 7.962 16.599 7.96294C16.3336 7.96388 16.0795 8.07019 15.8925 8.2585H15.9225Z" fill="black" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_1034_6004">
+                        <rect width="36" height="36" fill="white" transform="translate(0.34375)" />
+                      </clipPath>
+                    </defs>
+                </svg>
+            </div>
+            <div class="card-heading">
+                <p class="card-heading-text">корзина <span class="card-heading-text-num"></span></p>
+                <div class="card-delete-all header-top__cart-close">удалить всё</div>
+            </div>
+            <div class="card-wrapper-products">
+                <!-- <div class="card-product">
+                    <svg class="card-product-delete" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.34375 1L11.3438 11M1.34375 11L11.3438 1" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    <img src="./media/card/1.png" alt="" class="card-product-img">
+                    <div class="card-product-info">
+                        <div class="card-product-info-top">
+                            <p class="card-product-info-heading">Перкуссивный массажер G800</p>
+                            <p class="card-product-info-garant">Гарантия 2 года</p>
+                        </div>
+                        <div class="card-product-info-btm">
+                            <p class="card-product-info-btn-coll">1 шт.</p>
+                            <p class="card-product-info-btn-price">13 000 ₽</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="card-price">
+                <p class="card-price-text">Итого:</p>
+                <p class="card-price-num">15 900 ₽</p>
+            </div>
+            <div class="card-oformit">Оформить заказ</div>
+            <div class="card-back">Вернуться к покупкам</div>
+        </div>
+    </div>
 
     <main class="product">
         <section class="front-screen">
@@ -451,7 +495,7 @@
                     <p class="card__info__name">Электрогриль</p>
                     <p class="card__info__product">baum zindech</p>
                     <p class="card__info__model">W700</p>
-                    <button href="#" class="card__info__href product-button desk">
+                    <button data-img="./../media/bg/Card.png" data-price="1000" data-name="Электрогриль W700" data-garant="гарантия 2 года" data-count="1" data-id="5"  href="#" class="card__info__href product-button desk product-button-add-new header-top__cart-open">
                         Добавить в корзину
                         <svg class="product-button-svg" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M24.1035 14.3102L6.10352 14.3102" stroke="white" stroke-width="1.68" stroke-linecap="round" stroke-linejoin="round" />
@@ -460,7 +504,7 @@
                     </button>
                 </div>
                 <p class="card__desk">Идеальная прожарка стейков благодаря интеллектуальным режимам приготовления</p>
-                <button href="#" class="card__info__href product-button mob">
+                <button  data-img="./../media/bg/Card.png" data-price="1000" data-name="Электрогриль W700" data-garant="гарантия 2 года" data-count="1" data-id="5"  href="#" href="#" class="card__info__href product-button mob product-button-add-new header-top__cart-open">
                     Добавить в корзину
                     <svg class="product-button-svg" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M24.1035 14.3102L6.10352 14.3102" stroke="white" stroke-width="1.68" stroke-linecap="round" stroke-linejoin="round" />
