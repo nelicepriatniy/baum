@@ -98,7 +98,7 @@ if (questions.length > 0) {
 
 let cartList = [
     {
-        img: './../media/card/1.png',
+        img: './media/card/1.png',
         name: 'Перкуссивный массажер G800',
         garant: 'Гарантия 2 года',
         count: 1,
@@ -106,7 +106,7 @@ let cartList = [
         id: 1,
     },
     {
-        img: './../media/card/1.png',
+        img: './media/card/1.png',
         name: 'Перкуссивный массажер G801',
         garant: 'Гарантия 2 года',
         count: 1,
@@ -114,7 +114,7 @@ let cartList = [
         id: 12,
     },
     {
-        img: './../media/card/1.png',
+        img: './media/card/1.png',
         name: 'Перкуссивный массажер G802',
         garant: 'Гарантия 2 года',
         count: 1,
