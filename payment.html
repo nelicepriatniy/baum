@@ -126,7 +126,7 @@
     </div>
 
     <main>
-        <section class="payment">
+        <section class="payment formInputs">
             <div class="container">
                 <div class="payment-wrapper">
                     <div class="payment-left">
@@ -148,10 +148,22 @@
                             <p class="payment-heading-text">данные покупателя</p>
                          </div>
                          <div class="form-payment">
-                             <input type="text" class="form-payment-input" placeholder="Имя*">
-                             <input type="text" class="form-payment-input" placeholder="Фамилия*">
-                             <input type="text" class="form-payment-input" placeholder="Электронная почта*">
-                             <input type="text" class="form-payment-input" placeholder="Телефон*">
+                            <label class="form-payment-label-inputs ">
+                                <input type="text" class="form-payment-input top-form__input" placeholder="Имя*">
+                                <p class="error-form-input">Некорректный ввод данных</p>
+                            </label>
+                            <label class="form-payment-label-inputs ">
+                                <input type="text" class="form-payment-input top-form__input" placeholder="Фамилия*">
+                                <p class="error-form-input">Некорректный ввод данных</p>
+                            </label>
+                            <label class="form-payment-label-inputs ">
+                                <input type="text" class="form-payment-input top-form__input" placeholder="Электронная почта*">
+                                <p class="error-form-input">Некорректный ввод данных</p>
+                            </label>
+                            <label class="form-payment-label-inputs ">
+                                <input type="text" class="form-payment-input top-form__input" placeholder="Телефон*">
+                                <p class="error-form-input">Некорректный ввод данных</p>
+                            </label>
                          </div>
                          <div class="payment-heading">
                             <p class="payment-heading-step">3/3</p>
@@ -167,17 +179,17 @@
                                 <label class="payment-left-wrapper-item">
                                     <input type="radio" name="oplata" class="payment-left-wrapper-item-checkbox" >
                                     <div class="payment-left-wrapper-item-visual"></div>
-                                    <img src="./media/icons/tinkoff.svg" alt="" class="payment-left-wrapper-item-img">
+                                    <img src="./media/icons/tinkoff.png" alt="" class="payment-left-wrapper-item-img">
                                     <p class="payment-left-wrapper-item-text">Рассрочка Тинькофф</p>
                                 </label>
                                 <label class="payment-left-wrapper-item">
                                     <input type="radio" name="oplata" class="payment-left-wrapper-item-checkbox" >
                                     <div class="payment-left-wrapper-item-visual"></div>
-                                    <img src="./media/icons/halva.svg" alt="" class="payment-left-wrapper-item-img">
+                                    <img src="./media/icons/halva.png" alt="" class="payment-left-wrapper-item-img">
                                     <p class="payment-left-wrapper-item-text">Карта рассрочки</p>
                                 </label>
                                 <a href="" class="podrobntt-payment-left-wrapper-podrobnee">Подробнее о способах оплаты</a>
-                                <div class="payment-left-wrapper-oplata-button">Перейти к оплате</div>
+                                <div class="payment-left-wrapper-oplata-button top-form__button">Перейти к оплате</div>
                          </div>
                     </div>
                     <div class="payment-right">
@@ -196,7 +208,7 @@
                                     </svg>
                                 </div>
                                 <div class="card-heading">
-                                    <p class="card-heading-text">корзина <span class="card-heading-text-num"></span></p>
+                                    <p class="card-heading-text">Ваш заказ <span class="card-heading-text-num"></span></p>
                                     <div class="card-delete-all header-top__cart-close">Изменить</div>
                                 </div>
                                 <div class="card-wrapper-products">
@@ -217,12 +229,38 @@
                                         </div>
                                     </div> -->
                                 </div>
-                                <div class="card-price">
+                                <!-- <div class="card-price">
                                     <p class="card-price-text">Итого:</p>
                                     <p class="card-price-num">15 900 ₽</p>
+                                </div> -->
+                                <!-- <div class="card-oformit">Оформить заказ</div>  -->
+                            </div>
+                        </div>
+                        <div class="payment-price">
+                            <div class="promokod-block">
+                                <input type="text" class="promokod-input" placeholder="введите промокод">
+                                <div class="input-promokod-arr">
+                                    <svg viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.4634 5.02127L1.5 5.02127" stroke="white" stroke-width="1.21816" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M8.07812 0.625109L12.5 5.02801L8.07812 9.43164" stroke="white" stroke-width="1.21816" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
                                 </div>
-                                <div class="card-oformit">Оформить заказ</div>
-                                <div class="card-back">Вернуться к покупкам</div>
+                            </div>
+                            <div class="price-list">
+                                <div class="price-item">
+                                    <div class="price-item-name">стоимость товаров</div>
+                                    <div class="price-item-dotted"></div>
+                                    <p class="price-item-num price-add-products">16 000 ₽ </p>
+                                </div>
+                                <div class="price-item">
+                                    <div class="price-item-name">доставка</div>
+                                    <div class="price-item-dotted"></div>
+                                    <p class="price-item-num dostavkaPrice" data-dostavka-price="100">100 ₽</p>
+                                </div>
+                            </div>
+                            <div class="price-itog">
+                                <p class="price-itog-name">ИТОГО</p>
+                                <p class="price-itog-num">16 100 ₽</p>
                             </div>
                         </div>
                     </div>

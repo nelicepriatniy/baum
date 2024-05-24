@@ -218,7 +218,7 @@ setInterval(() => {
     if(addToCard.length > 0) {
         for(let i = 0; addToCard.length > i; i++) {
             addToCard[i].onclick = ()=>{
-                cardBlock.classList.add('active')
+                // cardBlock.classList.add('active')
                 for(let j = 0; cartList.length > j; j++) {
                     if(cartList[j].id === Number(addToCard[i].getAttribute('data-id'))) {
                         cartList.splice(j, 1)
@@ -247,6 +247,16 @@ setInterval(() => {
             }
         }
     }
+    if(document.querySelector('.header-top-card-current')) {
+        document.querySelector('.header-top-card-current').innerHTML = cartList.length
+        if(cartList.length === 0) {
+            document.querySelector('.header-top-card-current').classList.add('notActive')
+        } else {
+            document.querySelector('.header-top-card-current').classList.remove('notActive')
+
+        }
+    }
+    
 }, 100)
 
 // document.onclick = ()=>{
@@ -299,18 +309,19 @@ setInterval(() => {
 
     if (cardBlock1) {
         let cardCount2 = cardBlock1.querySelector('.card-heading-text-num');
-        let cardItog2 = cardBlock1.querySelector('.card-price-num');
+        // let cardItog2 = cardBlock1.querySelector('.card-price-num');
         let cartDeleteAll1 = cardBlock1.querySelector('.card-delete-all');
 
-        cardItog2.innerHTML = itogPrice + '₽'
+        // cardItog2.innerHTML = itogPrice + '₽'
         cardCount2.innerHTML = '(' + cartList.length + ')';
 
         cartDeleteAll1.onclick = () => {
-            cartList = [];
-            cardWrapper1.innerHTML = '';
-            itogPrice1 = 0;
-            cardItog2.innerHTML = itogPrice1 + '₽'
+            // cartList = [];
+            // cardWrapper1.innerHTML = '';
+            // itogPrice1 = 0;
+            // cardItog2.innerHTML = itogPrice1 + '₽'
             // cardBlock.classList.remove('active')
+            alert('Вы точно хотите изменить состав заказа? В этом случае все несохраненные данные будут потеряны, и оформление придётся начать сначала')
         }
         let allProducts1 = cardBlock1.querySelectorAll('.card-product');
         if (allProducts1.length > 0) {
@@ -338,7 +349,7 @@ setInterval(() => {
                         }
                     }
                     allProducts1 = cardBlock1.querySelectorAll('.card-product');
-                    cardItog2.innerHTML = itogPrice1 + '₽'
+                    // cardItog2.innerHTML = itogPrice1 + '₽'
                     cardCount2.innerHTML = '(' + cartList.length + ')';
 
                 }
@@ -379,3 +390,31 @@ setInterval(() => {
         }
     }
 }, 100)
+document.querySelector('.price-add-products').innerHTML = itogPrice1 + '₽'
+
+let dostavkaPrice = Number(document.querySelector('.dostavkaPrice').getAttribute('data-dostavka-price'))
+
+document.querySelector('.price-itog-num').innerHTML = itogPrice1 + dostavkaPrice + '₽'
+
+
+
+let forms = document.querySelectorAll('.formInputs') //класс форм
+function formCheck(item) {
+    if (item) {
+        let childInp = item.querySelectorAll('.top-form__input'); //класс инпутов формы
+        let button = item.querySelector('.top-form__button'); //класс кнопки формы
+        button.onclick = () => {
+            for (let i = 0; i < childInp.length; i++) {
+                if (!childInp[i].value) {
+                    childInp[i].classList.add('red-flag') //добавляем класс красных инпутов
+                } else {
+                    childInp[i].classList.remove('red-flag') //убираем класс красных инпутов
+                }
+            }
+        }
+    }
+}
+
+for (let i = 0; i < forms.length; i++) {
+    formCheck(forms[i])
+}
